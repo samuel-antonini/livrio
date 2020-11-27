@@ -1,0 +1,10 @@
+*.DS_Store
+*.log
+*.pot
+*.pyc
+*.sqlite3
+parms.py
+__pycache__/
+media/
+scrappers/
+scrapy.cfg
