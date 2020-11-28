@@ -16,11 +16,8 @@ class Publication(models.Model):
     year = models.CharField(max_length=4, blank=True, null=True)
     people = models.JSONField(blank=True, null=True)
     slug = models.SlugField(max_length=200, default='', editable=False)
+    cover_url = models.CharField(max_length=150, blank=True, null=True)
     blurb = models.JSONField(blank=True, null=True)
-
-    class Meta:
-        verbose_name = 'Publicacão'
-        verbose_name_plural = 'Publicacões'
 
     def __str__(self):
         return self.title
