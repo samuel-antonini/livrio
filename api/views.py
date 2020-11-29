@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 from rest_framework import permissions
 from api.serializers import PubliSerializer
-from publicacoes.models import Publication
+from publication.models import Publication
 
 
 class PubliViewSet(viewsets.ModelViewSet):

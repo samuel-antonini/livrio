@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from scrapy.spidermiddlewares import depth
 
-from publicacoes.models import Publication
+from publication.models import Publication
 
 
 class PubliSerializer(serializers.HyperlinkedModelSerializer):

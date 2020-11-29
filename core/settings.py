@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'account',
-    'publicacoes',
+    'publication',
     'api',
     'rest_framework',
 ]
@@ -132,3 +132,5 @@ STATICFILES_STORAGE = getattr(parms, 'STATICFILES_STORAGE', 'django.contrib.stat
 # Media Files
 MEDIA_URL = '/media/'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+DATA_DUMP_FOLDER = os.path.join(BASE_DIR, 'utils/data')
