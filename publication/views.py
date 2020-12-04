@@ -24,7 +24,7 @@ def loader(request):
         for book in json_obj:
             data = {
                 'title': str(book['title']).split('-')[0].strip(),
-                'author': book['author'],
+                'author': ', '.join(book['author']),
                 'publisher': book['publisher'],
                 'isbn_ean': book['isbn_ean'],
                 'category': book['category'],
@@ -33,7 +33,7 @@ def loader(request):
                 'pages': book['pages'],
                 'edition': book['edition'],
                 'year': book['year'],
-                'people': book['people'],
+                'people': ', '.join(book['people']),
                 'cover_url': book['images'][0]['path'],
                 'blurb': str(book['blurb']).replace("[", "").replace(']', '').replace("'", "").replace('"', '').strip(),
             }

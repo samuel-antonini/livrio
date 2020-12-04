@@ -5,7 +5,7 @@ from django.utils.text import slugify
 
 class Publication(models.Model):
     title = models.CharField(max_length=150)
-    author = models.JSONField()
+    author = models.CharField(max_length=200)
     publisher = models.CharField(max_length=25)
     isbn_ean = models.CharField(max_length=20, unique=True)
     category = models.CharField(max_length=50, blank=True, null=True)
@@ -14,7 +14,7 @@ class Publication(models.Model):
     pages = models.CharField(max_length=4, blank=True, null=True)
     edition = models.CharField(max_length=2, blank=True, null=True)
     year = models.CharField(max_length=4, blank=True, null=True)
-    people = models.JSONField(blank=True, null=True)
+    people = models.CharField(max_length=200, blank=True, null=True)
     slug = models.SlugField(max_length=200, default='', editable=False)
     cover_url = models.CharField(max_length=150, blank=True, null=True)
     blurb = models.JSONField(blank=True, null=True)
