@@ -1,5 +1,4 @@
 from rest_framework import serializers
-from scrapy.spidermiddlewares import depth
 
 from publication.models import Publication
 
