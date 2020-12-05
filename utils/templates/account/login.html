@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    <div class="container-login">
+        <div class="brand">
+            <span class="livrio">Livr.io</span>
+        </div>
+        <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" name="email" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Senha:</label>
+                <input type="password" name="password" class="form-control" required>
+            </div>
+
+            <input type="submit" value="Login">
+        </form>
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == 'error' %}
+                    <span class="erro-login">{{ message }}</span>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        <span><small>Ainda não tem uma conta? Cadastre-se <a href="{% url 'account-register' %}">AQUI</a></small></span>
+    </div>
+{% endblock %}

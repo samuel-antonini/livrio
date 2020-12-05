@@ -17,18 +17,18 @@ def register(request):
 
             # send email verification now
             activation_key = helpers.generate_activation_key(username=request.POST['username'])
-            subject = 'FEIRA - Account Verification'
+            subject = 'Livr.io - Verificação de conta'
             message = '''\n
-            Please visit the following link to verify your account: \n\n
+            Visite o link abaixo para finalizar a criação da sua conta: \n\n
             %s://%s/account/activate/?key=%s''' % (request.scheme, request.get_host(), activation_key)
 
             try:
                 send_mail(subject, message, settings.SERVER_EMAIL, [request.POST['email']], fail_silently=False)
-                messages.info(request, 'Account created! Click on the link sent to your email to activate the account')
+                messages.info(request, 'Um link de verificacão foi enviado para seu e-mail.')
 
             except:
                 error = True
-                messages.info(request, 'Unable to send email verification. Please try again')
+                messages.info(request, 'Não foi possível enviar o e-mail de confirmação. Tente novamente.')
 
             if not error:
                 u = f.save()
@@ -69,10 +69,10 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
-            return redirect('home')
+            return redirect('')
 
         else:
-            messages.error(request, 'usuário/senha inválido')
+            messages.error(request, 'email/senha inválido')
             return redirect('login')
 
     else:

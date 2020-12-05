@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    <div class="container-login">
+        <div class="brand">
+            <span class="livrio">Livr.io - Nova conta</span>
+        </div>
+        <form action="{% url 'account-register' %}" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">{{ form.username.label }}:</label>
+                {{ form.username }}
+                {{ form.username.errors }}
+            </div>
+            <div class="form-group">
+                <label for="first_name">{{ form.first_name.label }}:</label>
+                {{ form.first_name }}
+            </div>
+            <div class="form-group">
+                <label for="last_name">{{ form.last_name.label }}:</label>
+                {{ form.last_name }}
+            </div>
+            <div class="form-group">
+                <label for="email">{{ form.email.label }}:</label>
+                {{ form.email }}
+                {{ form.email.errors }}
+            </div>
+            <div class="form-group">
+                <label for="password1">{{ form.password1.label }}:</label>
+                {{ form.password1 }}
+            </div>
+            <div class="form-group">
+                <label for="password2">{{ form.password2.label }}:</label>
+                {{ form.password2 }}
+                {{ form.password2.errors }}
+            </div>
+            {% if messages %}
+                {% for message in messages %}
+                    <span class="info-login">{{ message }}</span>
+                {% endfor %}
+            {% endif %}
+            <input type="submit" value="Criar conta">
+        </form>
+    </div>
+{% endblock %}

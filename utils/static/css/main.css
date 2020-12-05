@@ -1,0 +1,105 @@
+:root {
+    --liv-vermelho: #EB5757;
+    --liv-dark-blue: #3A3768;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    background: #F2F2F2;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container-login {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    width: 250px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #828282;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    background: #FFFFFF;
+    width: 250px;
+    height: 35px;
+    border: 1px solid rgba(58, 55, 104, 0.35);
+    border-radius: 1px;
+    padding: 0 10px;
+}
+
+input[type=submit] {
+    color: #F2F2F2;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 250px;
+    height: 35px;
+    margin-top: 15px;
+    background: var(--liv-vermelho);
+    border: 0;
+    border-radius: 1px;
+}
+
+input[type=submit]:hover {
+    cursor: pointer;
+}
+
+.brand {
+    margin-bottom: 45px;
+}
+
+.brand .livrio {
+    color: var(--liv-vermelho);
+    font-size: 1.65rem;
+    font-weight: 300;
+}
+
+.erro-login,
+.info-login,
+ul.errorlist li {
+    text-transform: uppercase;
+    list-style: none;
+    font-weight: 500;
+}
+
+.erro-login,
+.info-login {
+    margin-bottom: 30px;
+}
+
+ul.errorlist {
+    margin: 2px;
+    padding: 2px;
+}
+
+.erro-login,
+ul.errorlist li {
+    color: var(--liv-vermelho)
+}
+
+.info-login {
+    color: var(--liv-dark-blue)
+}
+
