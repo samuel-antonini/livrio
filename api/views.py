@@ -15,10 +15,10 @@ class PublicationList(generics.ListAPIView):
         people = self.request.query_params.get('people', None)
         isbn = self.request.query_params.get('isbn', None)
         if author is not None:
-            queryset = Publication.objects.filter(author__icontains=author)
+            queryset = queryset.filter(author__icontains=author)
         elif people is not None:
-            queryset = Publication.objects.filter(people__icontains=people)
+            queryset = queryset.filter(people__icontains=people)
         elif isbn is not None:
-            queryset = Publication.objects.filter(isbn_ean=isbn)
+            queryset = queryset.filter(isbn_ean=isbn)
 
         return queryset
